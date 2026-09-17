@@ -267,3 +267,50 @@ Imágenes Multi-angulares → Reconstrucción 3D → Malla + Silueta
 - Crane, K., et al. (2017). "Discrete Differential Geometry"
 
 Este enfoque personal representa una evolución natural del proyecto actual, manteniendo la base sólida de modelado estadístico de siluetas mientras se añade la dimensión de relieve necesaria para representaciones 3D fieles y completas de las especies vegetales.
+
+## Causas Directas e Indirectas del Problema Analizado
+
+### Causas Directas
+
+- La base actual del proyecto está centrada en siluetas 2D, por lo que la geometría de la hoja se reduce a un contorno sin profundidad real.
+  - Efecto: la hoja se representa como una superficie plana y visualmente incompleta, sin volumen ni relieve.
+
+- No existe un protocolo de captura que incorpore vistas laterales, oblicuas o invertidas, lo que impide reconstruir la tercera dimensión.
+  - Efecto: la información necesaria para describir la curvatura y el grosor de la hoja no se obtiene, limitando cualquier reconstrucción 3D.
+
+- El sistema actual no captura variaciones de altura ni ondulaciones superficiales, por lo que la superficie se percibe como plana.
+  - Efecto: desaparecen las venas, las crestas y las irregularidades morfológicas que dan identidad al tejido foliar.
+
+- La ausencia de datos de profundidad o mapas de desplazamiento evita generar relieve fisiológico en la hoja.
+  - Efecto: la superficie no puede simular cambios de altura ni textura realista, reduciendo la calidad del modelo final.
+
+- La representación de las especies se limita a un modelo estadístico de contorno, sin incluir la complejidad volumétrica propia de cada estructura vegetal.
+  - Efecto: se pierden rasgos característicos de cada especie y el modelo resulta más genérico que biológicamente fiel.
+
+- La validación geométrica del modelo se enfoca más en la forma 2D que en la fidelidad tridimensional real.
+  - Efecto: el sistema puede parecer correcto desde arriba, pero falla al evaluarse en vista lateral o en simulaciones volumétricas.
+
+### Causas Indirectas
+
+- El proyecto parte de una solución robusta para siluetas, pero no contempla una evolución gradual hacia datos 3D desde su inicio.
+  - Efecto: la arquitectura del sistema quedó condicionada a un paradigma bidimensional y no se preparó para la transición a geometría volumétrica.
+
+- El conjunto de muestras disponible parece estar orientado a la forma general de la hoja más que a su relieve superficial y su variabilidad intrínseca.
+  - Efecto: la base de datos no refleja adecuadamente la diversidad real de curvatura, espesor y textura entre especies.
+
+- La falta de metadatos de cámara, iluminación, ángulo, escala y estado fisiológico de la hoja dificulta una reconstrucción fiable.
+  - Efecto: la profundidad estimada puede ser inconsistente, con errores de calibración o artefactos geométricos.
+
+- No se ha definido aún una integración clara entre el pipeline 2D actual y un pipeline 3D, lo que genera una brecha metodológica.
+  - Efecto: los procesos de extracción, alineación y generación quedan desacoplados, reduciendo la coherencia del modelo final.
+
+- La ausencia de un criterio de comparación entre modelos 2D y 3D hace difícil cuantificar la pérdida de realismo volumétrico.
+  - Efecto: no se puede evaluar de forma objetiva si la representación tridimensional mejora, mantiene o empeora la fidelidad morfológica.
+
+- El enfoque técnico se concentra en la generación visual, pero no en la captación física del relieve, que es el origen del problema real.
+  - Efecto: los resultados visuales se vuelven estéticos, pero no representan la estructura orgánica de la hoja con precisión.
+
+### Síntesis
+
+En resumen, la causa directa principal es que el sistema actual modela únicamente la proyección de la hoja, no su geometría tridimensional. Las causas indirectas se relacionan con la falta de un protocolo de adquisición 3D, la ausencia de profundidad en los datos, la escasa integración entre procesos 2D y 3D y la insuficiente validación de la forma real en volumen. Por ello, el problema no es solo visual, sino metodológico: la base de datos y el modelo no están diseñados para capturar la complejidad del relieve foliar.
+
