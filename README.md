@@ -45,6 +45,16 @@ dataset_hojas/
 
 ## Flujo de trabajo
 
+### Interfaz grafica
+
+Con el entorno virtual activado, abre el panel visual con:
+
+```
+python src/interfaz_grafica.py
+```
+
+La interfaz organiza el flujo completo en cuatro pestanas: extraer siluetas desde imagenes, entrenar los modelos por especie, generar hojas sinteticas y exportar una silueta o JSON a MAXScript. Los procesos pesados se ejecutan en segundo plano y la ventana muestra una vista previa de la hoja.
+
 1. **Extraer una hoja real de una foto:**
    Corre `src/extractor_siluetas.py` (F5 con la config *"1) Extractor de siluetas"*,
    o `python src/extractor_siluetas.py`). Te pedirá seleccionar una imagen y
